@@ -18,36 +18,34 @@ function Contact() {
         };
 
 
-         const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('Submitting...');
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("Submitting...");
 
-    // **** Backend/Email Integration Logic ****
-    // यहाँ आपको अपने Backend Service (जैसे Formspree, Netlify Forms, या आपकी API) 
-    // का उपयोग करके डेटा भेजना होगा।
-    
-    try {
-const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/contact`,
+      {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('Message Sent Successfully! We will contact you soon.');
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
-      } else {
-        setStatus('Submission Failed. Please try again or call us.');
-
-
       }
-    } catch (error) {
-      console.error('Submission Error:', error);
-      setStatus('An error occurred. Check your network or contact support.');
+    );
+
+    if (response.ok) {
+      setStatus("Message Sent Successfully! We will contact you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      setStatus("Submission Failed. Please try again.");
     }
-  };
+  } catch (error) {
+    console.error("Submission Error:", error);
+    setStatus("An error occurred. Please try again later.");
+  }
+};
+
 
   return (
      <section id="contact" className="contact-section">
