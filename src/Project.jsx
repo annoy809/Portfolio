@@ -9,7 +9,7 @@ function Project() {
       "Professional corporate website with responsive layout and clean UI.",
     image:
       "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=900&q=80",
-    liveUrl: "https://kgncentre.com",
+    liveUrl: "https://kgnitsoftware.unaux.com/?i=1",
     caseStudyUrl: "https://kgncentre.com/casestudy",
   },
   {
@@ -26,7 +26,7 @@ function Project() {
     description: "LMS website with course pages and dashboards.",
     image:
       "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
-    liveUrl: "https://alphatutorials.com",
+    liveUrl: "https://alphatutorials.co.in/",
     caseStudyUrl: "https://alphatutorials.com/casestudy",
   },
   {
