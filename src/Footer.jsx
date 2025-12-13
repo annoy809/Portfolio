@@ -48,9 +48,9 @@ const Footer = () => {
             <p>Phone: +91 8826248376</p>
 
             <div className="footer-social">
-              <a href="#"><i className="ri-instagram-fill"></i></a>
+              <a href="https://www.instagram.com/mxsxom"><i className="ri-instagram-fill"></i></a>
               <a href="#"><i className="ri-linkedin-box-fill"></i></a>
-              <a href="#"><i className="ri-github-fill"></i></a>
+              <a href="https://github.com/annoy809"><i className="ri-github-fill"></i></a>
               <a href="#"><i className="ri-behance-fill"></i></a>
             </div>
           </div>
