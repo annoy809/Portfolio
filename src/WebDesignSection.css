@@ -59,3 +59,61 @@ h2 {
 .cta:hover {
   text-decoration: underline;
 }
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+  .web-design-section {
+    padding: 40px 16px;
+  }
+
+  .web-design-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .web-design-image {
+    width: 220px;
+    padding: 16px;
+  }
+
+  .web-design-text {
+    width: 100%;
+  }
+
+  .category {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .cta {
+    font-size: 15px;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px) {
+
+  .web-design-image {
+    width: 180px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+

@@ -121,91 +121,107 @@ background: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7?au
 
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
+/* =========================
+   SERVICES – RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .services-hero {
+    height: 50vh;
+    margin: 30px auto;
+    border-radius: 24px;
+    margin-left: auto;
   }
 
   .services-hero-content {
-    padding: 0 30px;
-  }
-}
-
-@media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+    padding: 0 50px;
   }
 
   .services-hero-content h1 {
-    font-size: 36px;
+    font-size: 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
-@media (max-width: 600px){
 
-  /* HERO */
-  .services-hero{
+/* Mobile */
+@media (max-width: 768px) {
+
+  .services-hero {
     height: 45vh;
-    margin: 20px 10px;
-    border-radius: 18px;
-    margin-left: 50px;
-    width: 500px;
-
+    margin: 20px 16px;
+    border-radius: 20px;
   }
 
-  .services-hero-content{
+  .services-hero-content {
     max-width: 100%;
-    padding: 0 20px;
+    padding: 0 24px;
+    text-align: center;
   }
 
-  .services-hero-content h1{
+  .services-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .services-hero-content p {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 70px 16px;
+  }
+
+  .services-header h2 {
     font-size: 28px;
-    margin-bottom: 10px;
   }
 
-  .services-hero-content p{
-    font-size: 14px;
-    line-height: 1.5;
+  .services-header p {
+    font-size: 15px;
   }
 
-  /* CONTAINER */
-  .container{
-    padding: 60px 15px;
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  /* HEADER */
-  .services-header h2{
-    font-size: 26px;
+  .service-card {
+    padding: 30px 22px;
   }
 
-  .services-header p{
-    font-size: 14px;
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
   }
 
-  /* GRID */
-  .services-grid{
-    gap: 20px;
-  }
-
-  /* CARD */
-  .service-card{
-    padding: 25px 20px;
-    border-radius: 14px;
-  }
-
-  .service-icon{
-    width: 60px;
-    height: 60px;
-    font-size: 26px;
-    margin-bottom: 15px;
-  }
-
-  .service-card h3{
+  .service-card h3 {
     font-size: 18px;
   }
 
-  .service-card p{
-    font-size: 13px;
-    line-height: 1.5;
+  .service-card p {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px) {
+
+  .services-hero {
+    height: 40vh;
+    width: 53vh;
+  }
+
+  .services-hero-content h1 {
+    font-size: 26px;
+  }
+
+  .services-hero-content p {
+    font-size: 15px;
   }
 }
 

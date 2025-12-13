@@ -154,3 +154,49 @@
     max-width: 100%;
   }
 }
+
+/* =========================
+   FOOTER ALIGNMENT FIX
+========================= */
+@media (max-width: 768px) {
+
+  .footer {
+    text-align: left; /* center hata diya */
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr) !important; /* left-right columns */
+    gap: 30px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1; /* brand full width upar */
+  }
+
+  .footer-col h4::after {
+    margin-left: 0; /* underline left aligned */
+  }
+
+  .footer-social {
+    justify-content: flex-start; /* icons left */
+    width: 200px;
+
+  }
+
+  .footer-bottom {
+    text-align: center; /* sirf copyright center */
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+
+  .footer-columns {
+    grid-template-columns: 1fr; /* very small phone pe single column */
+  }
+
+  .footer-social {
+    justify-content: flex-start;
+  }
+}
+

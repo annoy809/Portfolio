@@ -492,3 +492,107 @@ display: none;
         bottom: 15%;
     }
 }
+/* =========================
+   EXTRA SMALL MOBILE (480px)
+========================= */
+@media screen and (max-width: 480px){
+
+  body{
+    font-size: 11px;
+  }
+
+  /* carousel height */
+  .carousel{
+    height: 480px;
+  }
+
+  /* intro text */
+  .carousel .list .item:nth-child(2) .introduce{
+    width: 60%;
+    margin-left: 25px;
+  }
+
+  .carousel .list .item .introduce .title{
+    font-size: 1.3em;
+  }
+
+  .carousel .list .item .introduce .topic{
+    font-size: 2.1em;
+  }
+
+  .carousel .list .item .introduce .des{
+    font-size: 10px;
+    line-height: 1.35em;
+  }
+
+  /* image smaller */
+  .carousel .list .item img{
+    width: 22%;
+  }
+
+  /* detail view */
+  .carousel.showDetail .list .item:nth-child(2) .detail{
+    width: 60%;
+    font-size: 10px;
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) .detail .title{
+    font-size: 1.7em;
+  }
+
+  /* buttons */
+  #prev,
+  #next{
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    bottom: 12%;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES (360px)
+========================= */
+@media screen and (max-width: 360px){
+
+  body{
+    font-size: 10px;
+  }
+
+  .carousel{
+    height: 440px;
+  }
+
+  .carousel .list .item:nth-child(2) .introduce{
+    width: 65%;
+    margin-left: 18px;
+  }
+
+  .carousel .list .item .introduce .title{
+    font-size: 1.2em;
+  }
+
+  .carousel .list .item .introduce .topic{
+    font-size: 1.9em;
+  }
+
+  .carousel .list .item .introduce .des{
+    font-size: 9.5px;
+  }
+
+  .carousel .list .item img{
+    width: 20%;
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) .detail{
+    width: 65%;
+    font-size: 9.5px;
+  }
+
+  #prev,
+  #next{
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+}
