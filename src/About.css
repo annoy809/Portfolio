@@ -94,3 +94,83 @@ font-size: 14px;
 color: #555;
 line-height: 1.6;
 }
+@media (max-width: 600px){
+
+  /* HERO */
+  .hero-container{
+    padding: 0 20px;
+    max-width: 100%;
+
+  }
+
+  .hero-small{
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-title{
+    font-size: 30px;
+    margin: 8px 0;
+  }
+
+  .hero-subtitle{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ABOUT */
+  .container{
+    padding: 60px 15px;
+  }
+
+  .about-grid{
+    grid-template-columns: 0.5fr;
+    gap: 30px;
+    margin-left: 140px;
+  }
+
+  .about-content h2{
+    font-size: 24px;
+    margin-bottom: 14px;
+    
+  }
+
+  .about-content p{
+    font-size: 14px;
+    line-height: 1.6;
+    
+  }
+
+  /* FEATURES */
+  .features-grid{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-card{
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .feature-card h4{
+    font-size: 16px;
+  }
+
+  .feature-card p{
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .about-image{
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img{
+  width: 260px;        /* size change kar sakte ho */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+}

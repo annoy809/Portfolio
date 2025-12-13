@@ -140,3 +140,72 @@ background: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7?au
     font-size: 36px;
   }
 }
+@media (max-width: 600px){
+
+  /* HERO */
+  .services-hero{
+    height: 45vh;
+    margin: 20px 10px;
+    border-radius: 18px;
+    margin-left: 50px;
+    width: 500px;
+
+  }
+
+  .services-hero-content{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .services-hero-content h1{
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .services-hero-content p{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* CONTAINER */
+  .container{
+    padding: 60px 15px;
+  }
+
+  /* HEADER */
+  .services-header h2{
+    font-size: 26px;
+  }
+
+  .services-header p{
+    font-size: 14px;
+  }
+
+  /* GRID */
+  .services-grid{
+    gap: 20px;
+  }
+
+  /* CARD */
+  .service-card{
+    padding: 25px 20px;
+    border-radius: 14px;
+  }
+
+  .service-icon{
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .service-card h3{
+    font-size: 18px;
+  }
+
+  .service-card p{
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
