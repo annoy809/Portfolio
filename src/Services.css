@@ -153,17 +153,11 @@ background: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7?au
 @media (max-width: 768px) {
 
   .services-hero {
-    background: #ffffff;          /* WHITE BACKGROUND */
-    height: auto;
-    min-height: 260px;
-    margin: 20px 16px;
-    border-radius: 24px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-    width: auto;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    filter: none;  }
+    grid-template-columns: 1fr;
+    gap: 24px;
+        padding: 30px 22px;
+
+  }
 
   .services-hero-content {
     max-width: 100%;
@@ -220,7 +214,7 @@ background: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7?au
 
   .services-hero {
     height: 40vh !important;
-    width: 48vh !important;
+    width: 40vh !important;
   }
 
   .services-hero-content h1 {
