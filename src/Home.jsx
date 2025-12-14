@@ -9,11 +9,14 @@ import WhyChooseUs from "./WhyChooseUs";
 import DesignServices from "./DesignServices";
 import WebDesignSection from "./WebDesignSection";
 import Project from "./Project";
+import Snowfall from "./Snowfall";
+
 
 
 export default function App() {
   return (
     <>
+      <Snowfall />
       <Navbar />
       <main>
         <Portfolio />
