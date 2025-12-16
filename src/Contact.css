@@ -1,196 +1,95 @@
+/* =========================
+   COMMON STYLES
+========================= */
 #contact {
-    margin-top: 100px;
-    padding: 60px 20px;
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(15px);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+  margin-top: 80px;
+  padding: 60px 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 #contact h2 {
-    text-align: center;
-    font-size: 38px;
+  font-size: 32px;
+  margin-bottom: 16px;
 }
 
 #contact p {
-    text-align: center;
-    color: var(--muted);
-    margin-bottom: 30px;
-}
-
-#contact form {
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-#contact input,
-#contact textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    resize: none;
-}
-
-#contact button {
-    padding: 14px;
-    border-radius: 14px;
-    font-weight: 600;
-    background: var(--accent);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#contact button:hover {
-    background: #005bb5;
-}
-.contact-section {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
-  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .contact-container {
   display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
-  justify-content: center;
+  gap: 50px;
+  justify-content: space-between;
 }
 
-/* Left Panel: Contact Info */
-.contact-info {
-  flex: 1 1 350px;
-  background-color: #fff;
-  padding: 30px 25px;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+.contact-info,
+.contact-form {
+  flex: 1;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
 }
 
-.contact-info h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.contact-info p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #555;
+.contact-info h2,
+.contact-form h3 {
+  margin-bottom: 12px;
 }
 
 .contact-info .info-item {
-  display: flex;
-  align-items: center;
+  margin-top: 8px;
   font-size: 16px;
-  margin-bottom: 12px;
-  color: #333;
-}
-
-.contact-info .info-item span {
-  margin-left: 8px;
-}
-
-/* Right Panel: Contact Form */
-.contact-form {
-  flex: 1 1 400px;
-  background-color: #fff;
-  padding: 30px 25px;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.contact-form h3 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-
-.contact-form .form-group {
-  margin-bottom: 15px;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: #555;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  color: #333;
-  transition: 0.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #007BFF;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0,123,255,0.3);
-}
-
-.contact-form textarea {
-  resize: vertical;
-}
-
-/* Submit Button */
-.contact-form .submit-btn {
-  background-color: #007BFF;
-  color: #fff;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  margin-bottom: 16px;
+  padding: 14px;
   font-size: 16px;
-  transition: 0.3s;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
 }
 
-.contact-form .submit-btn:hover {
-  background-color: #0056b3;
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #4caf50;
+  color: #fff;
 }
 
-.contact-form .submit-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* Status Message */
 .status-message {
-  margin-top: 15px;
-  font-weight: 500;
+  margin-top: 12px;
+  font-size: 14px;
 }
 
 .status-message.success {
-  color: green;
+  color: #4caf50;
 }
 
 .status-message.error {
-  color: red;
+  color: #f44336;
 }
+
 /* =========================
-   CONTACT – MOBILE RESPONSIVE
+   TABLET / SMALL DEVICES
 ========================= */
 @media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-  /* Glassmorphism Contact */
   #contact {
-    margin-top: 60px;
     padding: 40px 16px;
-    border-radius: 14px;
   }
 
   #contact h2 {
@@ -201,65 +100,20 @@
     font-size: 15px;
   }
 
-  #contact form {
-    gap: 12px;
-  }
-
-  #contact input,
-  #contact textarea {
-    font-size: 15px;
-    padding: 12px;
-  }
-
-  #contact button {
-    padding: 12px;
-    font-size: 15px;
-  }
-
-  /* Modern Contact Section */
-  .contact-section {
-    padding: 50px 16px;
-  }
-
-  .contact-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .contact-info,
-  .contact-form {
-    padding: 24px 20px;
-  }
-
-  .contact-info h2 {
+  .contact-info h2,
+  .contact-form h3 {
     font-size: 24px;
   }
 
-  .contact-info p {
-    font-size: 15px;
-  }
-
-  .contact-info .info-item {
-    font-size: 15px;
-  }
-
-  .contact-form h3 {
-    font-size: 22px;
-  }
-
+  .contact-info p,
+  .contact-info .info-item,
   .contact-form label {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .contact-form input,
-  .contact-form textarea {
-    font-size: 14px;
-    padding: 11px 12px;
-    color: #ccc;
-  }
-
-  .contact-form .submit-btn {
-    width: 100%;
+  .contact-form textarea,
+  .contact-form button {
     font-size: 15px;
     padding: 12px;
   }
@@ -269,7 +123,6 @@
    EXTRA SMALL PHONES
 ========================= */
 @media (max-width: 480px) {
-
   #contact h2 {
     font-size: 24px;
   }
@@ -282,8 +135,23 @@
     font-size: 20px;
   }
 
+  #contact {
+    padding: 30px 12px;
+  }
+
   .contact-info,
   .contact-form {
-    padding: 20px 16px;
+    padding: 20px 12px;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .status-message {
+    font-size: 13px;
   }
 }
