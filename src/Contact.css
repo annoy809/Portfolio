@@ -157,7 +157,7 @@
   .contact-container {
     flex-direction: column;
     gap: 35px;
-    height: 1100px;
+    height: 1200px;
   }
 
   .contact-info,
@@ -168,6 +168,8 @@
   .contact-info h2,
   .contact-form h3 {
     font-size: 24px;
+    margin-bottom: 30px;
+    height: 100px;
   }
 
   .contact-form input,
@@ -175,6 +177,11 @@
   .contact-form button {
     font-size: 15px;
     padding: 12px 14px;
+    height: 400px;
+  }
+  .status-message{
+    font-size: 14px;
+    height: 1300px;
   }
 }
 
