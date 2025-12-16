@@ -1,119 +1,120 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Contact.css";
-
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
 
-  const [status, setStatus] = useState("");
+      const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
 
-  // Handle input changes
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+        // 2. State for Loading/Error Status
+        const [status, setStatus] = useState('');
+      
+        // 3. Handle Input Changes
+        const handleChange = (e) => {
+          setFormData({ ...formData, [e.target.name]: e.target.value });
+        };
 
-  // Handle form submit
-  const handleSubmit = async (e) => {
+
+const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Submitting...");
+    setStatus('Submitting...');
 
+    // **** Backend/Email Integration Logic ****
+    // यहाँ आपको अपने Backend Service (जैसे Formspree, Netlify Forms, या आपकी API) 
+    // का उपयोग करके डेटा भेजना होगा।
+    
     try {
-      const backendUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
-
-      const response = await fetch(`${backendUrl}/api/contact`, {
-        method: "POST",
+const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json(); // Get response body
-
       if (response.ok) {
-        setStatus("Message Sent Successfully! We will contact you soon.");
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setStatus('Message Sent Successfully! We will contact you soon.');
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
       } else {
-        setStatus(data.message || "Submission Failed. Please try again.");
+        setStatus('Submission Failed. Please try again or call us.');
       }
     } catch (error) {
-      console.error("Submission Error:", error);
-      setStatus("An error occurred. Please try again later.");
+      console.error('Submission Error:', error);
+      setStatus('An error occurred. Check your network or contact support.');
     }
   };
 
+
+
   return (
-    <section id="contact" className="contact-section">
-      <div className="contact-container">
-        <div className="contact-info">
-          <h2>Let's Talk Business!</h2>
-          <p>
-            Ready to kickstart your next software project or IT solution? Get
-            in touch today and let's bring your ideas to life!
-          </p>
-          <div className="info-item">📞 Call Us: 8826248376</div>
-          <div className="info-item">
-            📍 Address: Ratiya Marg, Sangam Vihar, Delhi
-          </div>
-        </div>
-
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <h3>Send a Message</h3>
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="subject"
-            placeholder="Service"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-
-          <button type="submit" disabled={status === "Submitting..."}>
-            {status === "Submitting..." ? "Sending..." : "Send Message"}
-          </button>
-
-          {status && status !== "Submitting..." && (
-            <p
-              className={`status-message ${
-                status.includes("Successfully") ? "success" : "error"
-              }`}
-            >
-              {status}
+     <section id="contact" className="contact-section">
+        <div className="contact-container">
+          <div className="contact-info">
+            <h2>Let's Talk Business!</h2>
+            <p>
+              Ready to kickstart your next software project or IT solution?
+              Get in touch today and let's bring your ideas to life!
             </p>
-          )}
-        </form>
-      </div>
-    </section>
-  );
+            <div className="info-item">📞 Call Us: 8826248376</div>
+            <div className="info-item">📍 Address: Ratiya Marg, Sangam Vihar, Delhi</div>
+          </div>
+
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <h3>Send a Message</h3>
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Service"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+
+            <button type="submit" disabled={status === "Submitting..."}>
+              {status === "Submitting..." ? "Sending..." : "Send Message"}
+            </button>
+
+            {status && status !== "Submitting..." && (
+              <p
+                className={`status-message ${
+                  status.includes("Successfully") ? "success" : "error"
+                }`}
+              >
+                {status}
+              </p>
+            )}
+          </form>
+        </div>
+      </section>
+  )
 }
 
-export default Contact;
+export default Contact
