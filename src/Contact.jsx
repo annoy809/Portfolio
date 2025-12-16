@@ -1,118 +1,119 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import "./Contact.css";
+
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-      const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
+  const [status, setStatus] = useState("");
 
-        // 2. State for Loading/Error Status
-        const [status, setStatus] = useState('');
-      
-        // 3. Handle Input Changes
-        const handleChange = (e) => {
-          setFormData({ ...formData, [e.target.name]: e.target.value });
-        };
+  // Handle input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
+  // Handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Submitting...");
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  setStatus("Submitting...");
+    try {
+      const backendUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-  try {
-    const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/contact`,
-      {
+      const response = await fetch(`${backendUrl}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+      });
+
+      const data = await response.json(); // Get response body
+
+      if (response.ok) {
+        setStatus("Message Sent Successfully! We will contact you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus(data.message || "Submission Failed. Please try again.");
       }
-    );
-
-    if (response.ok) {
-      setStatus("Message Sent Successfully! We will contact you soon.");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } else {
-      setStatus("Submission Failed. Please try again.");
+    } catch (error) {
+      console.error("Submission Error:", error);
+      setStatus("An error occurred. Please try again later.");
     }
-  } catch (error) {
-    console.error("Submission Error:", error);
-    setStatus("An error occurred. Please try again later.");
-  }
-};
-
+  };
 
   return (
-     <section id="contact" className="contact-section">
-        <div className="contact-container">
-          <div className="contact-info">
-            <h2>Let's Talk Business!</h2>
-            <p>
-              Ready to kickstart your next software project or IT solution?
-              Get in touch today and let's bring your ideas to life!
-            </p>
-            <div className="info-item">📞 Call Us: 8826248376</div>
-            <div className="info-item">📍 Address: Ratiya Marg, Sangam Vihar, Delhi</div>
+    <section id="contact" className="contact-section">
+      <div className="contact-container">
+        <div className="contact-info">
+          <h2>Let's Talk Business!</h2>
+          <p>
+            Ready to kickstart your next software project or IT solution? Get
+            in touch today and let's bring your ideas to life!
+          </p>
+          <div className="info-item">📞 Call Us: 8826248376</div>
+          <div className="info-item">
+            📍 Address: Ratiya Marg, Sangam Vihar, Delhi
           </div>
-
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <h3>Send a Message</h3>
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="subject"
-              placeholder="Service"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-
-            <button type="submit" disabled={status === "Submitting..."}>
-              {status === "Submitting..." ? "Sending..." : "Send Message"}
-            </button>
-
-            {status && status !== "Submitting..." && (
-              <p
-                className={`status-message ${
-                  status.includes("Successfully") ? "success" : "error"
-                }`}
-              >
-                {status}
-              </p>
-            )}
-          </form>
         </div>
-      </section>
-  )
+
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <h3>Send a Message</h3>
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Service"
+            value={formData.subject}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+
+          <button type="submit" disabled={status === "Submitting..."}>
+            {status === "Submitting..." ? "Sending..." : "Send Message"}
+          </button>
+
+          {status && status !== "Submitting..." && (
+            <p
+              className={`status-message ${
+                status.includes("Successfully") ? "success" : "error"
+              }`}
+            >
+              {status}
+            </p>
+          )}
+        </form>
+      </div>
+    </section>
+  );
 }
 
-export default Contact
+export default Contact;
