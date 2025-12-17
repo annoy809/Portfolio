@@ -3,7 +3,6 @@
 ========================= */
 .services-page {
   font-family: "Inter", sans-serif;
-  color: #111;
   background: #f8f8f8;
 }
 
@@ -19,10 +18,10 @@
   max-width: 1300px;
   width: 90%;
   border-radius: 30px;
-  background: rgba(255, 255, 255, 0.9); /* White frosted glass */
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -30,8 +29,13 @@
 }
 
 @keyframes floatHero {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 /* HERO CONTENT */
@@ -45,12 +49,13 @@
 .services-hero-content h1 {
   font-size: 48px;
   margin-bottom: 16px;
+  color: #fff !important;
 }
 
 .services-hero-content p {
   font-size: 18px;
   line-height: 1.7;
-  color: #555;
+  color: rgb(225, 197, 197);
 }
 
 /* =========================
@@ -99,7 +104,7 @@
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   transform: translateY(30px);
   opacity: 0;
@@ -109,7 +114,7 @@
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
 }
 
 /* Fade up animation for cards */
@@ -159,26 +164,93 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .services-hero { height: 50vh; padding: 50px 30px; }
-  .services-hero-content h1 { font-size: 40px; }
-  .services-grid { gap: 30px; }
+  .services-hero {
+    height: 50vh;
+    padding: 50px 30px;
+  }
+
+  .services-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .services-grid {
+    gap: 30px;
+  }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .services-hero { height: 50vh; padding: 30px 20px; }
-  .services-hero-content h1 { font-size: 30px; }
-  .services-hero-content p { font-size: 16px; }
-  .services-grid { grid-template-columns: 1fr; gap: 24px; }
-  .service-card { padding: 30px 22px; }
-  .service-icon { width: 64px; height: 64px; font-size: 28px; }
-  .service-card h3 { font-size: 18px; }
-  .service-card p { font-size: 14px; }
+  .services-hero {
+    height: 50vh;
+    padding: 30px 20px;
+  }
+
+  .services-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .services-hero-content p {
+    font-size: 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-card {
+    padding: 30px 22px;
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
 }
 
 /* Extra Small Phones */
 @media (max-width: 480px) {
-  .services-hero { height: 40vh; padding: 20px; }
-  .services-hero-content h1 { font-size: 26px; }
-  .services-hero-content p { font-size: 15px; }
+  .services-hero {
+    height: 42vh;
+    padding: 28px 22px;
+    border-radius: 22px;
+
+    /* Better contrast for text */
+    background:
+      linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+      ),
+      inherit;
+
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  }
+
+  .services-hero-content h1 {
+    font-size: 18px;
+    font-weight: 600;            /* premium weight */
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  }
+
+  .services-hero-content p {
+    font-size: 10.5px;
+    line-height: 1.65;
+    max-width: 95%;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.88);
+    font-weight: 400;
+  }
 }
