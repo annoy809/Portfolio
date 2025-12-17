@@ -13,15 +13,6 @@ function Project() {
     caseStudyUrl: "https://kgncentre.com/casestudy",
   },
   {
-    title: "Shop.co – E-commerce Website",
-    description:
-      "Fully responsive e-commerce website with product listing and checkout.",
-    image:
-      "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?auto=format&fit=crop&w=900&q=80",
-    liveUrl: "https://shopco.com",
-    caseStudyUrl: "https://shopco.com/casestudy",
-  },
-  {
     title: "Alpha Tutorials – Educational Website",
     description: "LMS website with course pages and dashboards.",
     image:
@@ -29,23 +20,7 @@ function Project() {
     liveUrl: "https://alphatutorials.co.in/",
     caseStudyUrl: "https://alphatutorials.com/casestudy",
   },
-  {
-    title: "React Portfolio – Personal Portfolio",
-    description:
-      "Modern React portfolio with smooth animations and filtering.",
-    image:
-      "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=900&q=80",
-    liveUrl: "https://reactportfolio.com",
-    caseStudyUrl: "https://reactportfolio.com/casestudy",
-  },
-  {
-    title: "Admin Dashboard – React.js",
-    description: "Analytics dashboard with charts and tables.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-    liveUrl: "https://admindashboard.com",
-    caseStudyUrl: "https://admindashboard.com/casestudy",
-  },
+
 ];
 
   return (
