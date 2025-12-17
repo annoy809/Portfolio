@@ -8,6 +8,7 @@ import WhyChooseUs from "./WhyChooseUs";
 import DesignServices from "./DesignServices";
 import WebDesignSection from "./WebDesignSection";
 import Project from "./Project";
+import WWD from "./WWD";
 
 import "./App.css";
 
@@ -24,6 +25,8 @@ function App() {
         <Route path="/designservices" element={<DesignServices />} />
         <Route path="/webdesignsection" element={<WebDesignSection />} />
         <Route path="/project" element={<Project />} />
+        <Route path="/wwd" element={<WWD />} />
+
       </Routes>
     </BrowserRouter>
   );

@@ -10,6 +10,7 @@ import DesignServices from "./DesignServices";
 import WebDesignSection from "./WebDesignSection";
 import Project from "./Project";
 import Snowfall from "./Snowfall";
+import WWD from "./WWD";
 
 
 
@@ -25,6 +26,7 @@ export default function App() {
         <About />
         <DesignServices />
         <WebDesignSection />
+        <WWD />
         <WhyChooseUs />
         <Contact />
       </main>
