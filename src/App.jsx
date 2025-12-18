@@ -1,33 +1,35 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-import Service from "./Services";
-import Contact from "./Contact";
-import WhyChooseUs from "./WhyChooseUs";
-import DesignServices from "./DesignServices";
-import WebDesignSection from "./WebDesignSection";
-import Project from "./Project";
-import WWD from "./WWD";
+import Loader3D from "./Loader3D";
+
+const Home = lazy(() => import("./Home"));
+const About = lazy(() => import("./About"));
+const Service = lazy(() => import("./Services"));
+const Contact = lazy(() => import("./Contact"));
+const WhyChooseUs = lazy(() => import("./WhyChooseUs"));
+const DesignServices = lazy(() => import("./DesignServices"));
+const WebDesignSection = lazy(() => import("./WebDesignSection"));
+const Project = lazy(() => import("./Project"));
+const WWD = lazy(() => import("./WWD"));
 
 import "./App.css";
-
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Service" element={<Service />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/whychooseus" element={<WhyChooseUs />} />
-        <Route path="/designservices" element={<DesignServices />} />
-        <Route path="/webdesignsection" element={<WebDesignSection />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="/wwd" element={<WWD />} />
-
-      </Routes>
+      <Suspense fallback={<Loader3D />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/Service" element={<Service />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/whychooseus" element={<WhyChooseUs />} />
+          <Route path="/designservices" element={<DesignServices />} />
+          <Route path="/webdesignsection" element={<WebDesignSection />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/wwd" element={<WWD />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
