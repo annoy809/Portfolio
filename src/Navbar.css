@@ -70,10 +70,11 @@
    BRAND / LOGO
 ========================= */
 .nav-brand img {
-  height: 48px;
+  height: 98px;
   object-fit: contain;
   cursor: pointer;
   animation: logoFloat 4.5s ease-in-out infinite;
+  margin-top: 10px;
 }
 
 @keyframes logoFloat {
