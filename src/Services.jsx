@@ -1,49 +1,48 @@
 import React, { useEffect } from "react";
-import {
-  FaLaptopCode,
-  FaMobileAlt,
-  FaPalette,
-  FaBullhorn,
-  FaPaintBrush,
-  FaCogs,
-} from "react-icons/fa";
 import "./Services.css";
+
+/* ===== PNG ICONS IMPORT ===== */
+import webIcon from "./images/laptop.png";
+import appIcon from "./images/phone.png";
+import brandingIcon from "./images/brand.png";
+import marketingIcon from "./images/digital-marketing.png";
+import graphicsIcon from "./images/graphic.png";
+import consultingIcon from "./images/it-consulting.png";
 
 const serviceData = [
   {
-    icon: <FaLaptopCode />,
+    icon: webIcon,
     title: "Website Development",
     desc: "High-performance static, dynamic and full-stack websites.",
   },
   {
-    icon: <FaMobileAlt />,
+    icon: appIcon,
     title: "App Development",
     desc: "Modern mobile and web applications for automation.",
   },
   {
-    icon: <FaPalette />,
+    icon: brandingIcon,
     title: "Branding & Logo Design",
     desc: "Complete brand identity & visual guidelines.",
   },
   {
-    icon: <FaBullhorn />,
+    icon: marketingIcon,
     title: "Digital Marketing",
     desc: "Social media, paid ads & organic growth strategies.",
   },
   {
-    icon: <FaPaintBrush />,
+    icon: graphicsIcon,
     title: "Graphics Design",
     desc: "Posters, banners, ads creatives & social graphics.",
   },
   {
-    icon: <FaCogs />,
+    icon: consultingIcon,
     title: "IT Consulting",
     desc: "System upgrades, automation & digital scaling.",
   },
 ];
 
 const Services = () => {
-  // Optional: animate on scroll
   useEffect(() => {
     const cards = document.querySelectorAll(".service-card");
     const observer = new IntersectionObserver(
@@ -86,8 +85,15 @@ const Services = () => {
 
         <div className="services-grid">
           {serviceData.map((service, idx) => (
-            <div className="service-card" key={idx} style={{ animationDelay: `${idx * 0.2}s` }}>
-              <div className="service-icon">{service.icon}</div>
+            <div
+              className="service-card"
+              key={idx}
+              style={{ animationDelay: `${idx * 0.2}s` }}
+            >
+              <div className="service-icon">
+                <img src={service.icon} alt={service.title} />
+              </div>
+
               <h3>{service.title}</h3>
               <p>{service.desc}</p>
             </div>
