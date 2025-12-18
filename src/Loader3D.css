@@ -1,46 +1,92 @@
+/* Wrapper */
 .loader-wrapper {
   position: fixed;
   inset: 0;
-  background: #ffffff;
+  background: radial-gradient(circle at center, #ffffff, #f2f2f2);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  font-family: "Inter", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
 }
 
-.loader-wrapper p {
-  margin-top: 20px;
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #555;
-}
+/* 🤍 AI Liquid Blob */
+.ai-blob {
+  width: 180px;
+  height: 180px;
 
-.cube {
-  position: relative;
-  width: 50px;
-  height: 50px;
+  /* Multi-light gradients (soft neon) */
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,120,200,0.55), transparent 60%),
+    radial-gradient(circle at 70% 40%, rgba(120,150,255,0.55), transparent 60%),
+    radial-gradient(circle at 50% 70%, rgba(160,120,255,0.45), transparent 60%);
+
+  background-blend-mode: screen;
+  border-radius: 50%;
+  filter: blur(0.35px);
+
+  animation:
+    blobMorph 9s cubic-bezier(0.45, 0, 0.55, 1) infinite,
+    blobFloat 6s ease-in-out infinite,
+    blobColor 12s linear infinite;
+
+  box-shadow:
+    0 20px 50px rgba(120,140,255,0.25),
+    inset 0 0 35px rgba(255,255,255,0.6);
+
   transform-style: preserve-3d;
-  animation: rotate 2s infinite linear;
 }
 
-.face {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #000, #444);
-  opacity: 0.9;
+/* 🌊 Liquid morph (subtle like Apple) */
+@keyframes blobMorph {
+  0% {
+    border-radius: 50%;
+  }
+  25% {
+    border-radius: 56% 44% 52% 48% / 48% 52% 44% 56%;
+  }
+  50% {
+    border-radius: 46% 54% 48% 52% / 56% 44% 52% 48%;
+  }
+  75% {
+    border-radius: 54% 46% 56% 44% / 46% 54% 48% 52%;
+  }
+  100% {
+    border-radius: 50%;
+  }
 }
 
-.front  { transform: translateZ(25px); }
-.back   { transform: rotateY(180deg) translateZ(25px); }
-.right  { transform: rotateY(90deg) translateZ(25px); }
-.left   { transform: rotateY(-90deg) translateZ(25px); }
-.top    { transform: rotateX(90deg) translateZ(25px); }
-.bottom { transform: rotateX(-90deg) translateZ(25px); }
-
-@keyframes rotate {
-  0%   { transform: rotateX(0) rotateY(0); }
-  100% { transform: rotateX(360deg) rotateY(360deg); }
+/* 🫧 Floating + fake 3D tilt */
+@keyframes blobFloat {
+  0% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) rotateX(10deg) rotateY(-10deg) scale(1.04);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
+  }
 }
+
+/* 🌈 Gentle color shift */
+@keyframes blobColor {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Text */
+.loader-text {
+  margin-top: 26px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: rgba(0,0,0,0.55);
+}
+
+
+

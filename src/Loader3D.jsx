@@ -4,15 +4,8 @@ import "./Loader3D.css";
 const Loader3D = () => {
   return (
     <div className="loader-wrapper">
-      <div className="cube">
-        <div className="face front"></div>
-        <div className="face back"></div>
-        <div className="face right"></div>
-        <div className="face left"></div>
-        <div className="face top"></div>
-        <div className="face bottom"></div>
-      </div>
-      <p>Loading...</p>
+      <div className="ai-blob"></div>
+      <p className="loader-text">Loading...</p>
     </div>
   );
 };

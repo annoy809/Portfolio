@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader3D from "./Loader3D";
 
@@ -15,21 +15,35 @@ const WWD = lazy(() => import("./WWD"));
 import "./App.css";
 
 function App() {
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 3000); // 👈 LOADING TIME (ms)
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <BrowserRouter>
-      <Suspense fallback={<Loader3D />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/Service" element={<Service />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/whychooseus" element={<WhyChooseUs />} />
-          <Route path="/designservices" element={<DesignServices />} />
-          <Route path="/webdesignsection" element={<WebDesignSection />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/wwd" element={<WWD />} />
-        </Routes>
-      </Suspense>
+      {showLoader ? (
+        <Loader3D />
+      ) : (
+        <Suspense fallback={<Loader3D />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/Service" element={<Service />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/whychooseus" element={<WhyChooseUs />} />
+            <Route path="/designservices" element={<DesignServices />} />
+            <Route path="/webdesignsection" element={<WebDesignSection />} />
+            <Route path="/project" element={<Project />} />
+            <Route path="/wwd" element={<WWD />} />
+          </Routes>
+        </Suspense>
+      )}
     </BrowserRouter>
   );
 }
