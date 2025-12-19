@@ -20,6 +20,16 @@ function Project() {
     liveUrl: "https://alphatutorials.co.in/",
     caseStudyUrl: "https://alphatutorials.com/casestudy",
   },
+  {
+  title: "Netflix Clone – Premium Streaming Platform",
+  description:
+    "A high-end Netflix-inspired streaming web app with modern UI, TMDB-powered content, multi-server video playback, episode & season support, and a smooth, cinematic user experience.",
+  image:
+    "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=900&q=80",
+  liveUrl: "https://netflix-clone-omega-umber-42.vercel.app/",
+  caseStudyUrl: "https://yourdomain.com/netflix-clone-casestudy",
+}
+
 
 ];
 
