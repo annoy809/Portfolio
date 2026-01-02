@@ -5,8 +5,13 @@
   margin-top: 80px;
   padding: 60px 20px;
   border-radius: 16px;
-  backdrop-filter: blur(15px);
   background: rgba(255, 255, 255, 0.05);
+
+  /* ✅ Vercel / mobile stability fixes */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #contact h2 {
@@ -23,6 +28,12 @@
   display: flex;
   gap: 50px;
   justify-content: space-between;
+
+  /* ✅ prevent mobile overflow */
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  box-sizing: border-box;
 }
 
 .contact-info,
@@ -31,6 +42,9 @@
   padding: 30px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 14px;
+
+  /* ✅ important */
+  box-sizing: border-box;
 }
 
 .contact-info h2,
@@ -43,6 +57,9 @@
   font-size: 16px;
 }
 
+/* =========================
+   FORM ELEMENTS
+========================= */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -52,7 +69,16 @@
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
-  color: #000!important;
+  color: #000 !important;
+
+  /* ✅ mobile text jump fix */
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .contact-form button {
@@ -64,6 +90,9 @@
   cursor: pointer;
   background: #4caf50;
   color: #fff;
+
+  /* ✅ button overlap fix */
+  margin-top: 6px;
 }
 
 .status-message {
@@ -106,8 +135,7 @@
   }
 
   .contact-info p,
-  .contact-info .info-item,
-  .contact-form label {
+  .contact-info .info-item {
     font-size: 15px;
   }
 
@@ -123,6 +151,10 @@
    EXTRA SMALL PHONES
 ========================= */
 @media (max-width: 480px) {
+  #contact {
+    padding: 30px 12px;
+  }
+
   #contact h2 {
     font-size: 24px;
   }
@@ -135,10 +167,6 @@
     font-size: 20px;
   }
 
-  #contact {
-    padding: 30px 12px;
-  }
-
   .contact-info,
   .contact-form {
     padding: 20px 12px;
@@ -149,10 +177,20 @@
   .contact-form button {
     font-size: 14px;
     padding: 10px;
-    color: black;
+    color: #000;
   }
 
   .status-message {
     font-size: 13px;
+  }
+}
+
+/* =========================
+   DESKTOP BLUR ONLY (SAFE)
+========================= */
+@media (min-width: 769px) {
+  #contact {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
   }
 }
