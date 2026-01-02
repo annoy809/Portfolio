@@ -82,7 +82,9 @@
 }
 
 .contact-form button {
-  width: 100%;
+  display: block;          /* ✅ ensures proper block layout */
+  width: 100%;             /* full width inside container */
+  max-width: 100%;         /* prevent overflow on small screens */
   padding: 14px;
   font-size: 16px;
   border-radius: 8px;
@@ -92,7 +94,8 @@
   color: #fff;
 
   /* ✅ button overlap fix */
-  margin-top: 6px;
+  margin-top: 12px;        /* slightly more space from inputs */
+  box-sizing: border-box;  /* safe for all devices */
 }
 
 .status-message {
