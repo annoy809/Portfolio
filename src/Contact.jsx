@@ -15,34 +15,33 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setStatus("Submitting...");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Submitting...");
 
-  try {
-    const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/api/contact`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+    try {
+      const response = await fetch(
+        "https://portfolio-backend-8cco.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        setStatus("Message Sent Successfully! We will contact you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("Submission Failed. Please try again.");
       }
-    );
-
-    if (response.ok) {
-      setStatus("Message Sent Successfully! We will contact you soon.");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } else {
-      setStatus("Submission Failed. Please try again.");
+    } catch (error) {
+      console.error("Submission Error:", error);
+      setStatus("Server error. Please try again later.");
     }
-  } catch (error) {
-    console.error("Submission Error:", error);
-    setStatus("Server error. Please try again later.");
-  }
-};
-
+  };
 
   return (
     <section id="contact" className="contact-section">
