@@ -5,8 +5,9 @@
   margin-top: 80px;
   padding: 60px 20px;
   border-radius: 16px;
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
 }
 
 #contact h2 {
@@ -23,13 +24,16 @@
   display: flex;
   gap: 50px;
   justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .contact-info,
 .contact-form {
   flex: 1;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 14px;
 }
 
@@ -43,6 +47,9 @@
   font-size: 16px;
 }
 
+/* =========================
+   FORM ELEMENTS
+========================= */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -50,9 +57,15 @@
   padding: 14px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
-  color: #000!important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  color: #000;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: none;
 }
 
 .contact-form button {
@@ -62,21 +75,31 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  background: #4caf50;
+  background: #0d6efd;
   color: #fff;
+  margin-top: 6px;
 }
 
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* =========================
+   STATUS MESSAGE
+========================= */
 .status-message {
   margin-top: 12px;
   font-size: 14px;
+  text-align: center;
 }
 
 .status-message.success {
-  color: #4caf50;
+  color: #2e7d32;
 }
 
 .status-message.error {
-  color: #f44336;
+  color: #d32f2f;
 }
 
 /* =========================
@@ -96,19 +119,9 @@
     font-size: 28px;
   }
 
-  #contact p {
-    font-size: 15px;
-  }
-
   .contact-info h2,
   .contact-form h3 {
     font-size: 24px;
-  }
-
-  .contact-info p,
-  .contact-info .info-item,
-  .contact-form label {
-    font-size: 15px;
   }
 
   .contact-form input,
@@ -123,6 +136,10 @@
    EXTRA SMALL PHONES
 ========================= */
 @media (max-width: 480px) {
+  #contact {
+    padding: 30px 12px;
+  }
+
   #contact h2 {
     font-size: 24px;
   }
@@ -135,10 +152,6 @@
     font-size: 20px;
   }
 
-  #contact {
-    padding: 30px 12px;
-  }
-
   .contact-info,
   .contact-form {
     padding: 20px 12px;
@@ -149,10 +162,19 @@
   .contact-form button {
     font-size: 14px;
     padding: 10px;
-    color: black;
   }
 
   .status-message {
     font-size: 13px;
+  }
+}
+
+/* =========================
+   DESKTOP BLUR EFFECT ONLY
+========================= */
+@media (min-width: 769px) {
+  #contact {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
   }
 }
