@@ -12,10 +12,12 @@ return (
     <div className="about-grid">
 
       <div className="about-image">
-        <img
-          src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
-          alt="About"
-        />
+<img
+  src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+  alt="Designer working on UI project"
+/>
+
+
       </div>
 
       <div className="about-content">
