@@ -1,0 +1,169 @@
+.footer {
+  background: #f9fafb;
+  color: #333;
+  padding: 60px 0 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= BRAND ================= */
+.footer-brand h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #7b7b7b;
+}
+
+.footer-brand p {
+  margin-top: 14px;
+  max-width: 420px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ================= COLUMNS ================= */
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.footer-col h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.footer-col h4::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: #6a5cff;
+  display: block;
+  margin-top: 6px;
+}
+
+.footer-col a {
+  display: block;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: all 0.25s ease;
+}
+
+.footer-col a:hover {
+  color: #6a5cff;
+  transform: translateX(4px);
+}
+
+.footer-col p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ================= SOCIAL ================= */
+.footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease;
+}
+
+.footer-social a i {
+  font-size: 20px;
+}
+
+/* Brand Colors */
+.footer-social a:nth-child(1) i { color: #E4405F; } /* Instagram */
+.footer-social a:nth-child(2) i { color: #0077B5; } /* LinkedIn */
+.footer-social a:nth-child(3) i { color: #171515; } /* GitHub */
+.footer-social a:nth-child(4) i { color: #1769FF; } /* Behance */
+
+.footer-social a:hover {
+  transform: translateY(-4px);
+}
+
+/* Instagram Gradient */
+.footer-social a:nth-child(1) i {
+  background: radial-gradient(circle at 30% 107%,
+    #fdf497 0%, #fdf497 5%, #fd5949 45%,
+    #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= BOTTOM ================= */
+.footer-bottom {
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid #e6e6e6;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand h2 {
+    font-size: 22px;
+  }
+
+  .footer-col h4 {
+    font-size: 14px;
+  }
+
+  .footer-social a {
+    width: 34px;
+    height: 34px;
+  }
+
+  .footer-social a i {
+    font-size: 18px;
+  }
+}
