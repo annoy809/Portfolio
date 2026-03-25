@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Loader3D from "./Loader3D";
+
 
 const Home = lazy(() => import("./Home"));
 const About = lazy(() => import("./About"));
@@ -15,22 +15,11 @@ const WWD = lazy(() => import("./WWD"));
 import "./App.css";
 
 function App() {
-  const [showLoader, setShowLoader] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLoader(false);
-    }, 1000); // 👈 LOADING TIME (ms)
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <BrowserRouter>
-      {showLoader ? (
-        <Loader3D />
-      ) : (
-        <Suspense fallback={<Loader3D />}>
+
+        <Suspense fallback={<null />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -43,7 +32,7 @@ function App() {
             <Route path="/wwd" element={<WWD />} />
           </Routes>
         </Suspense>
-      )}
+ 
     </BrowserRouter>
   );
 }
