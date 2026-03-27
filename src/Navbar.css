@@ -335,7 +335,8 @@ body {
 ========================= */
 @media (max-width: 768px) {
   .nav-links,
-  .nav-cta {
+  .nav-cta,
+  .nav-github {
     display: none;
   }
 

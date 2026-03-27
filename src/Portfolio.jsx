@@ -81,95 +81,95 @@ const Portfolio = () => {
  <div className="carousel" ref={carouselRef}>
   <div className="list" ref={listRef}>
 
-    {/* ITEM 2 */}
+    {/* ITEM 2 */}{/* ITEM 1 */}
+<div className="item">
+  <img src={img1} alt="E-commerce Website" />
+  <div className="introduce">
+    <div className="title">E-Commerce Platform</div>
+    <div className="topic">ShopEase</div>
+    <div className="des">
+      A fully functional e-commerce app with cart system, product filters, and smooth UI experience.
+    </div>
+  </div>
+  <div className="detail">
+    <div className="title">ShopEase Full Details</div>
+    <div className="des">
+      Built using React, Node.js, and MongoDB. Includes authentication, payment gateway, and admin dashboard.
+    </div>
+  </div>
+</div>
+
+{/* ITEM 2 */}
 <div className="item">
   <img src={img2} alt="Corporate Website" />
   <div className="introduce">
     <div className="title">Corporate Website</div>
     <div className="topic">KGN Centre</div>
     <div className="des">
-      A professional corporate website with modern UI, responsive layout, and smooth animations to showcase company services.
+      A clean and modern business website designed to showcase services and company profile.
     </div>
   </div>
   <div className="detail">
     <div className="title">KGN Centre Full Details</div>
     <div className="des">
-      Built with HTML, CSS, and React. Features a responsive design, interactive sections, and optimized performance for desktop and mobile devices.
+      Developed with React and CSS animations. Fully responsive with contact forms and service sections.
     </div>
   </div>
 </div>
-    {/* ITEM 1 */}
-    <div className="item">
-      <img src={img1} alt="E-commerce Website" />
-      <div className="introduce">
-        <div className="title">E-Commerce Platform</div>
-        <div className="topic">ShopEase</div>
-        <div className="des">
-          A modern e-commerce website with responsive design, seamless checkout, and dynamic product listings.
-        </div>
-      </div>
-      <div className="detail">
-        <div className="title">ShopEase Full Details</div>
-        <div className="des">
-          Built with React and Node.js, featuring product filtering, payment integration, and admin dashboard.
-        </div>
-      </div>
-    </div>
 
-    {/* ITEM 2 */}
-    <div className="item">
-      <img src={img4} alt="E-commerce Website" />
-      <div className="introduce">
-        <div className="title">E-Commerce Platform</div>
-        <div className="topic">ShopEase</div>
-        <div className="des">
-          A modern e-commerce website with responsive design, seamless checkout, and dynamic product listings.
-        </div>
-      </div>
-      <div className="detail">
-        <div className="title">ShopEase Full Details</div>
-        <div className="des">
-          Built with React and Node.js, featuring product filtering, payment integration, and admin dashboard.
-        </div>
-      </div>
+{/* ITEM 3 */}
+<div className="item">
+  <img src={img3} alt="Chat Application" />
+  <div className="introduce">
+    <div className="title">Real-Time Chat App</div>
+    <div className="topic">ChatBox</div>
+    <div className="des">
+      A real-time messaging app with smooth UI and instant communication features.
     </div>
+  </div>
+  <div className="detail">
+    <div className="title">ChatBox Full Details</div>
+    <div className="des">
+      Built using Socket.io, Node.js, and React. Supports live messaging, user status, and notifications.
+    </div>
+  </div>
+</div>
 
-    {/* ITEM 3 */}
-    <div className="item">
-      <img src={img3} alt="Corporate Website" />
-      <div className="introduce">
-        <div className="title">Corporate Website</div>
-        <div className="topic">KGN Centre</div>
-        <div className="des">
-          Professional corporate website showcasing services, portfolio, and client testimonials with clean UI.
-        </div>
-      </div>
-      <div className="detail">
-        <div className="title">KGN Centre Full Details</div>
-        <div className="des">
-          Responsive design with optimized performance, CMS integration, and contact form functionality.
-        </div>
-      </div>
+{/* ITEM 4 */}
+<div className="item">
+  <img src={img4} alt="Portfolio Website" />
+  <div className="introduce">
+    <div className="title">Personal Portfolio</div>
+    <div className="topic">My Portfolio</div>
+    <div className="des">
+      A modern developer portfolio showcasing projects, skills, and contact details.
     </div>
+  </div>
+  <div className="detail">
+    <div className="title">Portfolio Full Details</div>
+    <div className="des">
+      Built with React and advanced CSS. Includes animations, project showcase, and responsive design.
+    </div>
+  </div>
+</div>
 
-    {/* ITEM 3 */}
-    {/* ITEM 2 */}
-    <div className="item">
-      <img src={img5} alt="E-commerce Website" />
-      <div className="introduce">
-        <div className="title">E-Commerce Platform</div>
-        <div className="topic">ShopEase</div>
-        <div className="des">
-          A modern e-commerce website with responsive design, seamless checkout, and dynamic product listings.
-        </div>
-      </div>
-      <div className="detail">
-        <div className="title">ShopEase Full Details</div>
-        <div className="des">
-          Built with React and Node.js, featuring product filtering, payment integration, and admin dashboard.
-        </div>
-      </div>
+{/* ITEM 5 */}
+<div className="item">
+  <img src={img5} alt="Netflix Clone" />
+  <div className="introduce">
+    <div className="title">Streaming UI Clone</div>
+    <div className="topic">Netflix Clone</div>
+    <div className="des">
+      A Netflix-inspired UI with movie browsing and dynamic content display.
     </div>
+  </div>
+  <div className="detail">
+    <div className="title">Netflix Clone Details</div>
+    <div className="des">
+      Built using React and TMDB API. Includes movie categories, trailers, and responsive layout.
+    </div>
+  </div>
+</div>
 
 
   </div>

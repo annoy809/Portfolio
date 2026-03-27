@@ -57,12 +57,20 @@ const Navbar = () => {
           <Link to="/about">About</Link>
           <HashLink smooth to="/#projects">Projects</HashLink>
           <HashLink smooth to="/#contact">Contact</HashLink>
+            <a
+    href="https://github.com/annoy809"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="nav-github"
+  >
+    GitHub
+  </a>
         </div>
 
-        {/* CTA */}
-        <HashLink smooth to="/#contact" className="nav-cta">
-          Let’s Talk
-        </HashLink>
+
+  <HashLink smooth to="/#contact" className="nav-cta">
+    Let’s Talk
+  </HashLink>
 
         {/* Mobile Menu Button */}
         <button
@@ -85,6 +93,17 @@ const Navbar = () => {
         <Link to="/about" onClick={closeMenu}>About</Link>
         <HashLink smooth to="/#projects" onClick={closeMenu}>Projects</HashLink>
         <HashLink smooth to="/#contact" onClick={closeMenu}>Contact</HashLink>
+
+  {/* ✅ GitHub button mobile ke liye */}
+  <a
+    href="https://github.com/annoy809"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mobile-github"
+    onClick={closeMenu}
+  >
+    GitHub
+  </a>
 
         <HashLink
           smooth
