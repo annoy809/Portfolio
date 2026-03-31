@@ -8,41 +8,6 @@
   overflow: hidden;
 }
 
-/* Floating droplets animation */
-.why-wrapper::before,
-.why-wrapper::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: rgba(108, 99, 255, 0.3);
-  border-radius: 50%;
-  animation: floatDrop 6s linear infinite;
-  top: -40px;
-}
-
-.why-wrapper::after {
-  width: 14px;
-  height: 14px;
-  background: rgba(255, 108, 108, 0.3);
-  animation-delay: 3s;
-  left: 80%;
-}
-
-@keyframes floatDrop {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(30vh) rotate(180deg);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(60vh) rotate(360deg);
-    opacity: 0;
-  }
-}
 
 /* =========================
    CARD
@@ -128,12 +93,7 @@
   animation: floatCard 4s ease-in-out infinite alternate;
 }
 
-/* Floating card animation */
-@keyframes floatCard {
-  0% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
-  50% { transform: translateY(-10px) rotateX(10deg) rotateY(10deg); }
-  100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
-}
+
 
 .glass-card i {
   font-size: 28px;

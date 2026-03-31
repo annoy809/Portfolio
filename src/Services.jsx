@@ -1,42 +1,34 @@
 import React, { useEffect } from "react";
 import "./Services.css";
 
-/* ===== PNG ICONS IMPORT ===== */
-import webIcon from "./images/laptop.png";
-import appIcon from "./images/phone.png";
-import brandingIcon from "./images/brand.png";
-import marketingIcon from "./images/digital-marketing.png";
-import graphicsIcon from "./images/graphic.png";
-import consultingIcon from "./images/it-consulting.png";
-
 const serviceData = [
   {
-    icon: webIcon,
+    icon: "https://cdn-icons-png.flaticon.com/512/1055/1055687.png",
     title: "Website Development",
     desc: "High-performance static, dynamic and full-stack websites.",
   },
   {
-    icon: appIcon,
+    icon: "https://cdn-icons-png.flaticon.com/512/2920/2920277.png",
     title: "App Development",
     desc: "Modern mobile and web applications for automation.",
   },
   {
-    icon: brandingIcon,
+    icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     title: "Branding & Logo Design",
     desc: "Complete brand identity & visual guidelines.",
   },
   {
-    icon: marketingIcon,
+    icon: "https://cdn-icons-png.flaticon.com/512/4149/4149650.png",
     title: "Digital Marketing",
     desc: "Social media, paid ads & organic growth strategies.",
   },
   {
-    icon: graphicsIcon,
+    icon: "https://cdn-icons-png.flaticon.com/512/1821/1821930.png",
     title: "Graphics Design",
-    desc: "Posters, banners, ads creatives & social graphics.",
+    desc: "Posters, banners, ad creatives & social media graphics.",
   },
   {
-    icon: consultingIcon,
+    icon: "https://cdn-icons-png.flaticon.com/512/2721/2721297.png",
     title: "IT Consulting",
     desc: "System upgrades, automation & digital scaling.",
   },

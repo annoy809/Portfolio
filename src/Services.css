@@ -3,59 +3,116 @@
 ========================= */
 .services-page {
   font-family: "Inter", sans-serif;
-  background: #f8f8f8;
+  background: #f8f9fb;
 }
 
 /* =========================
-   HERO SECTION – PREMIUM GLASS
+   HERO SECTION – PREMIUM
 ========================= */
 .services-hero {
-  height: 60vh;
+  height: 65vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   margin: 40px auto;
   max-width: 1300px;
   width: 90%;
   border-radius: 30px;
-  background: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1");
+
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1531297484001-80022131f5a1");
+
   background-size: cover;
   background-position: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
-  text-align: center;
-  animation: floatHero 3s ease-in-out infinite alternate;
 }
 
+/* FLOAT EFFECT */
 @keyframes floatHero {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-10px);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
 }
 
-/* HERO CONTENT */
-.services-hero-content {
-  position: relative;
-  max-width: 700px;
+/* =========================
+   HERO WRAPPER (LEFT ALIGN FIX)
+========================= */
+.services-hero-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
   padding: 0 40px;
-  color: #111;
 }
 
+/* =========================
+   HERO CONTENT – LEFT
+========================= */
+.services-hero-content {
+  max-width: 560px;
+  text-align: left;
+  color: #fff;
+  margin-left: 30px;
+}
+
+/* HEADING */
 .services-hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 16px;
-  color: #fff !important;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  margin-bottom: 18px;
 }
 
+/* TEXT */
 .services-hero-content p {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.7;
-  color: rgb(225, 197, 197);
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 28px;
+}
+
+/* =========================
+   BUTTONS (NEW)
+========================= */
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #111;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #eaeaea;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
 }
 
 /* =========================
@@ -65,7 +122,6 @@
   max-width: 1200px;
   margin: auto;
   padding: 100px 20px;
-  
 }
 
 /* =========================
@@ -81,11 +137,12 @@
   font-size: 36px;
   margin-bottom: 10px;
   color: #111;
+  font-weight: 600;
 }
 
 .services-header p {
   font-size: 16px;
-  color: #555;
+  color: #666;
 }
 
 /* =========================
@@ -94,33 +151,94 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-
+  gap: 30px;
 }
 
 /* =========================
-   SERVICE CARD – FLOATING + HOVER
+   SERVICE CARD
 ========================= */
 .service-card {
   background: #fff;
   border-radius: 20px;
-  padding: 40px 30px;
+  padding: 35px 25px;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
+
   transform: translateY(30px);
   opacity: 0;
-  cursor: pointer;
   animation: fadeUp 0.8s forwards;
-    margin-bottom: 30px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0,0,0,0.02), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.service-card:hover::before {
+  opacity: 1;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
-/* Fade up animation for cards */
+/* =========================
+   ICON
+========================= */
+.service-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1f3f6;
+  transition: 0.3s;
+}
+
+.service-icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  background: #e9ecf2;
+}
+
+/* =========================
+   TEXT
+========================= */
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* =========================
+   ANIMATION
+========================= */
 @keyframes fadeUp {
   to {
     transform: translateY(0);
@@ -128,130 +246,61 @@
   }
 }
 
-/* SERVICE ICON */
-.service-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 34px;
-  transition: all 0.3s ease;
-}
-
-.service-icon img{
-  width: 300px;
-  height: 300px;
-}
-
-/* CARD TEXT */
-.service-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.service-card p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
-
 /* =========================
    RESPONSIVE
 ========================= */
-
-/* Tablet */
 @media (max-width: 1024px) {
   .services-hero {
-    height: 50vh;
-    padding: 50px 30px;
+    height: 55vh;
   }
 
   .services-hero-content h1 {
     font-size: 40px;
   }
-
-  .services-grid {
-    gap: 30px;
-  }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .services-hero {
     height: 50vh;
-    padding: 30px 20px;
+  }
+
+  .services-hero-wrapper {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .services-hero-content {
+    text-align: center;
   }
 
   .services-hero-content h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .services-hero-content p {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .service-card {
-    padding: 30px 22px;
-  }
-
-  .service-icon {
-    width: 64px;
-    height: 64px;
-    font-size: 28px;
-  }
-
-  .service-card h3 {
-    font-size: 18px;
-  }
-
-  .service-card p {
-    font-size: 14px;
   }
 }
 
-/* Extra Small Phones */
 @media (max-width: 480px) {
   .services-hero {
     height: 42vh;
-    padding: 28px 22px;
     border-radius: 22px;
-
-    /* Better contrast for text */
-    background:
-      linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.55)
-      ),
-      inherit;
-
-    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
   }
 
   .services-hero-content h1 {
-    font-size: 18px;
-    font-weight: 600;            /* premium weight */
-    line-height: 1.25;
-    letter-spacing: -0.4px;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    font-size: 20px;
   }
 
   .services-hero-content p {
-    font-size: 10.5px;
-    line-height: 1.65;
-    max-width: 95%;
-    margin: 0 auto;
-    color: rgba(255,255,255,0.88);
-    font-weight: 400;
+    font-size: 12px;
   }
 }
