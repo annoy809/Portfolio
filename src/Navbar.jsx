@@ -94,7 +94,7 @@ const Navbar = () => {
         <HashLink smooth to="/#projects" onClick={closeMenu}>Projects</HashLink>
         <HashLink smooth to="/#contact" onClick={closeMenu}>Contact</HashLink>
 
-  {/* ✅ GitHub button mobile ke liye */}
+
   <a
     href="https://github.com/annoy809"
     target="_blank"
